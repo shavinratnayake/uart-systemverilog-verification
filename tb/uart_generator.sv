@@ -22,8 +22,8 @@ class uart_generator;
             trans = new();
             expected_trans = new();
 
-            if (trans.randomize() == 0) begin
-                $error("UART transaction randomization failed");
+            if (!trans.randomize()) begin
+                $fatal(1, "UART transaction randomization failed");
             end
 
             expected_trans.data = trans.data;

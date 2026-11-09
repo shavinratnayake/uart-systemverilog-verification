@@ -5,6 +5,7 @@ module uart_tx_tb;
     localparam int CLOCK_PERIOD     = 10;
     localparam int CLKS_PER_BIT     = 8;
     localparam int NUM_TRANSACTIONS = 1000;
+    localparam time SIM_TIMEOUT = 2_000_000ns;
 
     logic clk;
 
@@ -162,6 +163,12 @@ module uart_tx_tb;
         scoreboard.report();
 
         $finish;
+    end
+
+    // Stop the simulation if verification hangs.
+    initial begin
+        #SIM_TIMEOUT;
+        $fatal(1, "UART simulation timeout");
     end
 
 endmodule

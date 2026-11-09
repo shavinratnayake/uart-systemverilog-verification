@@ -50,7 +50,7 @@ class uart_scoreboard;
         $display("Passed       : %0d", passed);
         $display("Failed       : %0d", failed);
 
-        if (failed == 0)
+        if ((passed == num_transactions) && (failed == 0))
             $display("RESULT       : PASS");
         else
             $display("RESULT       : FAIL");

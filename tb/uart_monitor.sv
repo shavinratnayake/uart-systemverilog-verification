@@ -46,8 +46,8 @@ class uart_monitor #(
 
             repeat (CLKS_PER_BIT / 2) @(vif.mon_cb);
 
-            if (vif.mon_cb.tx_serial != 1'b0) begin
-                $error("UART montior error: invalid start bit");
+            if (vif.mon_cb.tx_serial !== 1'b0) begin
+                $fatal(1, "UART monitor error: invalid start bit");
             end
 
             for (int i = 0; i < 8; i ++) begin
@@ -57,8 +57,8 @@ class uart_monitor #(
 
             repeat (CLKS_PER_BIT) @(vif.mon_cb);
 
-            if (vif.mon_cb.tx_serial != 1'b1) begin
-                $error("UART monitor error: invalid stop bit");
+            if (vif.mon_cb.tx_serial !== 1'b1) begin
+                $fatal(1, "UART monitor error: invalid stop bit");
             end
 
             trans      = new();
