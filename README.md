@@ -167,11 +167,4 @@ verilator_coverage --report summary coverage.dat
 - Questa/ModelSim
 - Git/GitHub
 
-## Future Improvements
-
-- Add configurable parity and stop-bit support
-- Test additional `CLKS_PER_BIT` configurations
-- Add more directed tests for reset during transmission and start requests while busy
-- Improve RTL line, branch, and expression coverage
-- Add assertions for UART bit timing and transmission completion
 
