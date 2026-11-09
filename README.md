@@ -163,7 +163,7 @@ verilator_coverage --report summary coverage.dat
 ## Tools
 
 - SystemVerilog
-- Verilator 
+- Verilator 5.051 (development build) 
 - Questa/ModelSim
 - Git/GitHub
 
