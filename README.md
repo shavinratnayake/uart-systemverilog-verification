@@ -1,4 +1,3 @@
-cat > README.md <<'EOF'
 # UART Transmitter — SystemVerilog Verification
 
 ## Overview
@@ -175,4 +174,4 @@ verilator_coverage --report summary coverage.dat
 - Add more directed tests for reset during transmission and start requests while busy
 - Improve RTL line, branch, and expression coverage
 - Add assertions for UART bit timing and transmission completion
-EOF
+
